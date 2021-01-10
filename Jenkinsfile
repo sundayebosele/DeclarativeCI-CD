@@ -5,7 +5,7 @@ def buildInfo
 pipeline {
   agent { label 'master' }
     tools {
-      maven 'Maven'
+      maven 'M3'
       jdk 'JAVA_HOME'
     }
   options { timestamps () }	
@@ -16,7 +16,7 @@ pipeline {
    //stage ('Maven Build') {
       //steps {
        // script {
-       //   mvn= tool (name: 'Maven', type: 'maven') + '/bin/mvn'
+       //   mvn= tool (name: 'Maven', type: 'M3') + '/bin/mvn'
       //  }
        // sh "${mvn} clean install"
      // }
@@ -24,7 +24,7 @@ pipeline {
     stage('Artifactory_Configuration') {
       steps {
         script {
-		  rtMaven.tool = 'Maven'
+		  rtMaven.tool = 'M3'
 		  rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
 		  buildInfo = Artifactory.newBuildInfo()
 		  rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot', server: server
