@@ -10,13 +10,13 @@ pipeline {
     }
   options { timestamps () }	
   environment {
-    SONAR_HOME = "${tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}"
+    SONAR_HOME = "${tool name: 'sonarqube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}"
   }  
   stages {
    //stage ('Maven Build') {
       //steps {
        // script {
-       //   mvn= tool (name: 'Maven', type: 'M3') + '/bin/mvn'
+       //   mvn= tool (name: 'M3', type: 'M3') + '/bin/mvn'
       //  }
        // sh "${mvn} clean install"
      // }
