@@ -5,7 +5,7 @@ def buildInfo
 pipeline {
   agent { label 'master' }
     tools {
-      maven 'Maven'
+      maven 'M3'
       jdk 'JAVA_HOME'
     }
   options { 
