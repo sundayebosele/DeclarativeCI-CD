@@ -17,7 +17,7 @@ pipeline {
 // artifactNumToKeepStr - Max # of builds to keep with artifacts	  
 }	
   environment {
-    SONAR_HOME = "${tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}"
+    SONAR_HOME = "${tool name: 'sonarqube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}"
   }  
   stages {
     stage('Artifactory_Configuration') {
