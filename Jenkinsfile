@@ -19,18 +19,18 @@ pipeline {
   environment {
     SONAR_HOME = "${tool name: 'sonarqube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}"
   }  
-  stages {
-    stage('Artifactory_Configuration') {
-      steps {
-        script {
-		  rtMaven.tool = 'M3'
-		  rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
-		  buildInfo = Artifactory.newBuildInfo()
-		  rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot', server: server
-          buildInfo.env.capture = true
-        }			                      
-      }
-    }
+#  stages {
+#    stage('Artifactory_Configuration') {
+#      steps {
+#        script {
+#		  rtMaven.tool = 'M3'
+#		  rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
+#		  buildInfo = Artifactory.newBuildInfo()
+#		  rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot', server: server
+ #         buildInfo.env.capture = true
+  #      }			                      
+ #     }
+ #   }
     stage('Execute_Maven') {
 	  steps {
 	    script {
