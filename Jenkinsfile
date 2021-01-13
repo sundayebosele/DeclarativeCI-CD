@@ -1,5 +1,6 @@
 def mvn
-def server = Artifactory.server 'artifactory'
+def server = Artifactory.server 'http://maven.apache.org'
+#def server = Artifactory.server 'artifactory'
 def rtMaven = Artifactory.newMavenBuild()
 def buildInfo
 pipeline {
